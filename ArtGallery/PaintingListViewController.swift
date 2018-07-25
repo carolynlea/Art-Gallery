@@ -8,18 +8,41 @@
 
 import UIKit
 
-class PaintingListViewController: UIViewController {
+class PaintingListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, PaintingTableViewCellDelegate {
 
+    @IBOutlet weak var tableView: UITableView!
+    let paintingController = PaintingController()
+    let paintings: [Painting] = []
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        paintingController.loadPaintingsFromAssets()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func likeButtonWasTapped(on cell: PaintingTableViewCell) {
+        //tableView.indexPath(for: UITableViewCell)
+       
     }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return paintingController.paintings.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PaintingCell", for: indexPath)
+        guard let paintingCell = cell as? PaintingTableViewCell else {return cell}
+        let painting = paintingController.paintings[indexPath.row]
+        paintingCell.painting = painting
+        
+        
+        return paintingCell
 
+    }
+    
 }
 

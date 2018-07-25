@@ -19,11 +19,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4sh-c1-JXO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="359" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4sh-c1-JXO">
                                 <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PaintingCell" rowHeight="359" id="PPh-TU-N1d">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PaintingCell" rowHeight="359" id="PPh-TU-N1d" customClass="PaintingTableViewCell" customModule="ArtGallery" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="359"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PPh-TU-N1d" id="JGF-19-phR">
@@ -36,6 +36,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FX1-0N-XcH">
                                                     <rect key="frame" x="172" y="321" width="30" height="30"/>
                                                     <state key="normal" title="Like"/>
+                                                    <connections>
+                                                        <action selector="like:" destination="PPh-TU-N1d" eventType="touchUpInside" id="Ncx-MX-X1s"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -47,6 +50,10 @@
                                                 <constraint firstItem="FX1-0N-XcH" firstAttribute="centerX" secondItem="VhG-RD-UA1" secondAttribute="centerX" id="waX-jv-UAt"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="likeButton" destination="FX1-0N-XcH" id="7bs-qb-Zc0"/>
+                                            <outlet property="paintingImageView" destination="VhG-RD-UA1" id="KZc-UO-Z4p"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -61,6 +68,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Art Gallery" id="LJE-qm-2fC"/>
+                    <connections>
+                        <outlet property="tableView" destination="4sh-c1-JXO" id="k8a-4D-4d7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

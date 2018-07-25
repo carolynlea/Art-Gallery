@@ -11,5 +11,25 @@ import UIKit
 
 class PaintingController {
     
+    var paintings: [Painting] = []
+    var painting: Painting?
+    
+    func loadPaintingsFromAssets() {
+        
+        for image in 1...12 {
+            
+            let imageName = "Image\(image)"
+            guard let image = UIImage(named: imageName) else {continue}
+            let painting = Painting(painting: image)
+            paintings.append(painting)
+            
+        }
+        
+    }
+    
+    func toggleIsLiked(for painting: Painting){
+        
+    }
+    
     
 }
