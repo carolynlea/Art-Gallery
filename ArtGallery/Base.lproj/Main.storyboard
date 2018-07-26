@@ -19,40 +19,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="359" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4sh-c1-JXO">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="365" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4sh-c1-JXO">
                                 <rect key="frame" x="0.0" y="116" width="375" height="551"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PaintingCell" rowHeight="359" id="PPh-TU-N1d" customClass="PaintingTableViewCell" customModule="ArtGallery" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="359"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PaintingCell" rowHeight="365" id="PPh-TU-N1d" customClass="PaintingTableViewCell" customModule="ArtGallery" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="365"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PPh-TU-N1d" id="JGF-19-phR">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="358.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="364.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VhG-RD-UA1">
-                                                    <rect key="frame" x="9" y="11" width="357" height="302"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uZU-Xu-e1v">
+                                                    <rect key="frame" x="7" y="-1" width="361" height="309"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="309" id="B1z-X6-F9W"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FX1-0N-XcH">
-                                                    <rect key="frame" x="172" y="321" width="30" height="30"/>
-                                                    <state key="normal" title="Like"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsu-pY-XIT">
+                                                    <rect key="frame" x="145" y="325" width="83" height="39"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="83" id="wze-PS-8r7"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                                    <state key="normal" title="Button"/>
                                                     <connections>
-                                                        <action selector="like:" destination="PPh-TU-N1d" eventType="touchUpInside" id="Ncx-MX-X1s"/>
+                                                        <action selector="like:" destination="PPh-TU-N1d" eventType="touchUpInside" id="dnG-oU-EsJ"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="VhG-RD-UA1" secondAttribute="trailing" constant="9" id="3UU-Te-OHm"/>
-                                                <constraint firstItem="FX1-0N-XcH" firstAttribute="top" secondItem="VhG-RD-UA1" secondAttribute="bottom" constant="8" id="Tlb-So-xcz"/>
-                                                <constraint firstItem="VhG-RD-UA1" firstAttribute="top" secondItem="JGF-19-phR" secondAttribute="top" constant="11" id="g9K-cY-IWa"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="FX1-0N-XcH" secondAttribute="bottom" constant="-3" id="pQr-jr-Crd"/>
-                                                <constraint firstItem="VhG-RD-UA1" firstAttribute="leading" secondItem="JGF-19-phR" secondAttribute="leading" constant="9" id="rTl-8g-aTB"/>
-                                                <constraint firstItem="FX1-0N-XcH" firstAttribute="centerX" secondItem="VhG-RD-UA1" secondAttribute="centerX" id="waX-jv-UAt"/>
+                                                <constraint firstItem="uZU-Xu-e1v" firstAttribute="leading" secondItem="JGF-19-phR" secondAttribute="leadingMargin" constant="-8" id="0zk-rP-MDO"/>
+                                                <constraint firstItem="Dsu-pY-XIT" firstAttribute="top" secondItem="uZU-Xu-e1v" secondAttribute="bottom" constant="17" id="2kW-d8-lvQ"/>
+                                                <constraint firstItem="uZU-Xu-e1v" firstAttribute="centerX" secondItem="JGF-19-phR" secondAttribute="centerX" id="5bJ-oV-18B"/>
+                                                <constraint firstItem="Dsu-pY-XIT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="JGF-19-phR" secondAttribute="leading" id="USz-Sj-IDI"/>
+                                                <constraint firstAttribute="trailing" secondItem="Dsu-pY-XIT" secondAttribute="trailing" constant="147" id="kDp-dQ-8nW"/>
+                                                <constraint firstItem="uZU-Xu-e1v" firstAttribute="top" secondItem="JGF-19-phR" secondAttribute="topMargin" constant="-12" id="wQq-ya-kcU"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="likeButton" destination="FX1-0N-XcH" id="7bs-qb-Zc0"/>
-                                            <outlet property="paintingImageView" destination="VhG-RD-UA1" id="KZc-UO-Z4p"/>
+                                            <outlet property="likeButton" destination="Dsu-pY-XIT" id="bAy-v2-vLR"/>
+                                            <outlet property="paintingImageView" destination="uZU-Xu-e1v" id="EYT-rp-tw8"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -74,7 +81,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+            <point key="canvasLocation" x="1069.5999999999999" y="69.715142428785612"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aTT-w4-dfo">

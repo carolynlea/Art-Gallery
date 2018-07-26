@@ -24,8 +24,13 @@ class PaintingListViewController: UIViewController, UITableViewDelegate, UITable
     }
 
     func likeButtonWasTapped(on cell: PaintingTableViewCell) {
-        //tableView.indexPath(for: UITableViewCell)
-       
+        
+        print("Button tapped")
+        guard let indexPath = tableView.indexPath(for: cell) else {return}
+        let painting = paintingController.paintings[indexPath.row]
+        paintingController.toggleIsLiked(for: painting)
+        
+        tableView.reloadRows(at: [indexPath], with: .fade)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,11 +43,15 @@ class PaintingListViewController: UIViewController, UITableViewDelegate, UITable
         guard let paintingCell = cell as? PaintingTableViewCell else {return cell}
         let painting = paintingController.paintings[indexPath.row]
         paintingCell.painting = painting
-        
+        paintingCell.delegate = self
+        //paintingCell.contentView.isUserInteractionEnabled = true
         
         return paintingCell
 
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 465
+    }
 }
 

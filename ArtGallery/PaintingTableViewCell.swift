@@ -29,14 +29,22 @@ class PaintingTableViewCell: UITableViewCell {
     @IBAction func like(_ sender: Any) {
         
         delegate?.likeButtonWasTapped(on: self)
+       
     }
     
     private func updateViews() {
         
         guard let painting = painting else {return}
-        
         paintingImageView.image = painting.paintingImage
-        let likeButtonTitle = painting.isLiked ? "Unlike" : "Like"
+        
+        //let likeButtonTitle = painting.isLiked ? "Unlike" : "Like"
+        //likeButton.setTitle(likeButtonTitle, for: .normal)
+        var likeButtonTitle: String
+        if !painting.isLiked {
+            likeButtonTitle = "Like"
+        } else {
+            likeButtonTitle = "Unlike"
+        }
         likeButton.setTitle(likeButtonTitle, for: .normal)
         
     }
